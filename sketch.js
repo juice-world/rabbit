@@ -68,9 +68,9 @@ function setup()
  }
 
  else{
-   canW=windowWidth
-   canH=windowHeight
-   createCanvas(windowWidth,windowHeight)
+   canW=windowWidth;
+   canH=windowHeight;
+   createCanvas(windowWidth,windowHeight);
  }
 
 
@@ -146,7 +146,7 @@ function setup()
 function draw() 
 {
   background(51);
-  image(backgroundPic,0,0,displayWidth,displayHeight);
+  image(backgroundPic,0,0,displayWidth+200,displayHeight+200);
   ground.show();
   rope.show();
   rope2.show();
@@ -164,16 +164,16 @@ function draw()
   if(collide(fruit,rabbit)==true){
     rabbit.changeAnimation("eat")
     eating.play()
-  };
+  }
 
   if(fruit!=null && fruit.position.y>=650){
     rabbit.changeAnimation("sad")
     sadSound.play()
     backgroundSound.stop()
     fruit=null
-  };
+  }
   
-};
+}
 
 
 function drop(){
@@ -181,21 +181,21 @@ function drop(){
   fruit_con.detach();
   fruit_con=null
   cutting.play()
-};
+}
 
 function drop2(){
   rope2.break();
   fruit_con2.detach();
   fruit_con2=null
   cutting.play()
-};
+}
 
 function drop3(){
   rope3.break();
   fruit_con3.detach();
   fruit_con3=null
   cutting.play()
-};
+}
 
 
 
@@ -205,7 +205,7 @@ Matter.Body.applyForce(fruit,{x:0,y:0},{x:0.01,y:0})
 
 airwav.play()
 
-};
+}
 
 function mute(){
   if(backgroundSound.isPlaying()){
@@ -214,7 +214,7 @@ function mute(){
   else{
     backgroundSound.play()
   }
-};
+}
 
 function collide(body,sprite){
 if(body!=null){
@@ -234,7 +234,7 @@ if(body!=null){
 function keyPressed(){
   if(keyCode==LEFT_ARROW){
     blow()
-  };
+  }
 }
 
 
