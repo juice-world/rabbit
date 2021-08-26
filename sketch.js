@@ -160,7 +160,7 @@ function draw()
   if(fruit!=null){
     image(fruitPic,fruit.position.x,fruit.position.y,60,60);
   }
-   
+ pop();  
   if(collide(fruit,rabbit)==true){
     rabbit.changeAnimation("eat")
     eating.play()
@@ -172,7 +172,7 @@ function draw()
     backgroundSound.stop()
     fruit=null
   };
-  pop();
+  
 };
 
 
